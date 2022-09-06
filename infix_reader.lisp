@@ -1,7 +1,7 @@
-(defpackage #:prefix-reader (:use :cl)
-            (:export enable-prefix-reader
-                     disable-prefix-reader))
-(in-package #:prefix-reader)
+(defpackage #:infix-reader (:use :cl)
+            (:export enable-infix-reader
+                     disable-infix-reader))
+(in-package #:infix-reader)
 
 (defun read-as-string (stream) (write-to-string (read stream)))
 (defun read-in-delimiters (stream begin end)
@@ -26,14 +26,14 @@
 
 (defvar *readtables* nil)
 
-(defmacro enable-prefix-reader ()
+(defmacro enable-infix-reader ()
   '(eval-when (:compile-toplevel :load-toplevel :execute)
     (push *readtable* *readtables*)
     (setq *readtable* (copy-readtable))
     (set-macro-character #\{ #'infix-reader nil)
     (set-macro-character #\} #'infix-end nil)))
 
-(defmacro disable-prefix-reader ()
+(defmacro disable-infix-reader ()
   '(eval-when (:compile-toplevel :load-toplevel :execute)
     (setq *readtable* (pop *readtables*))))
 
