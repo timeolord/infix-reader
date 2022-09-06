@@ -3,7 +3,7 @@ A reader macro that enables infix notation in Common Lisp.
 
 # Usage
 ```lisp
-(prefix-reader:enable-prefix-reader)
+(infix-reader:enable-infix-reader)
 
 {1 + 2}
 ; 3
@@ -12,7 +12,7 @@ A reader macro that enables infix notation in Common Lisp.
 {x defvar 12}
 ; X
 
-(prefix-reader:disable-prefix-reader)
+(infix-reader:disable-infix-reader)
 ```
 
 # Notes
