@@ -1,5 +1,5 @@
 # infix-reader
-A reader macro that enables prefix notation in Common Lisp.
+A reader macro that enables infix notation in Common Lisp.
 
 # Usage
 ```lisp
