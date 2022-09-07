@@ -1,6 +1,11 @@
 # infix-reader
 A reader macro that enables infix notation in Common Lisp.
 
+# Installation
+```lisp
+(ql:quickload :infix-reader)
+```
+
 # Usage
 ```lisp
 (infix-reader:enable-infix-reader)
